@@ -13,10 +13,10 @@ Build a production-ready, accessible Enterprise Data-Grid that complies with WCA
 - [x] Task 1.5: Implement pagination controls.
 - [x] Task 1.6: Implement keyboard navigation using arrow keys.
 - [x] Task 1.7: Implement Enter selection and Space toggle interactions.
-- [ ] Task 1.8: Add ARIA grid semantics and screen reader support.
-- [ ] Task 1.9: Verify WCAG 2.2 AA accessibility and color contrast.
-- [ ] Task 1.10: Run Lighthouse Accessibility and Best Practices audits.
-- [ ] Task 1.11: Test responsive layout and complete atomic Git commits.
+- [x] Task 1.8: Add ARIA grid semantics and screen reader support.
+- [x] Task 1.9: Verify WCAG 2.2 AA accessibility and color contrast.
+- [x] Task 1.10: Run Lighthouse Accessibility and Best Practices audits.
+- [x] Task 1.11: Test responsive layout and complete atomic Git commits.
 
 ## Expected Results
 
