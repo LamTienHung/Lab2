@@ -10,8 +10,8 @@ Build a Mini-React Virtual DOM and Mounting Engine.
 - [x] Task 1.4: Implement recursive renderToDOM().
 - [x] Task 1.5: Build semantic HTML UI.
 - [x] Task 1.6: Add XSS verification tests.
-- [ ] Task 1.7: Inspect DOM using DevTools.
-- [ ] Task 1.8: Complete atomic Git commits.
+- [x] Task 1.7: Inspect DOM using DevTools.
+- [x] Task 1.8: Complete atomic Git commits.
 
 ## Expected Results
 - Virtual DOM is converted into real DOM.
