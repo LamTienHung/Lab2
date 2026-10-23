@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2 - FIFO Audio Visualizer</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./app.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <h1>FIFO Audio Visualizer</h1>
+        <p>Concurrent Audio Queue Management System</p>
+    </header>
+
+    <main id="main-content">
+        <section class="player-section" aria-labelledby="player-title">
+            <h2 id="player-title">Audio Player</h2>
+
+            <label for="track-url">Audio Track URL</label>
+            <input
+                type="url"
+                id="track-url"
+                placeholder="Enter an audio file URL"
+            >
+
+            <div class="controls">
+                <button type="button" id="add-track">Add to Queue</button>
+                <button type="button" id="play-audio">Play</button>
+                <button type="button" id="stop-audio">Stop</button>
+                <button type="button" id="cancel-task">Cancel Task</button>
+            </div>
+
+            <p id="player-status" role="status" aria-live="polite">
+                Ready to load audio.
+            </p>
+        </section>
+
+        <section class="queue-section" aria-labelledby="queue-title">
+            <h2 id="queue-title">FIFO Audio Queue</h2>
+
+            <p id="queue-count">Queue: 0 tracks</p>
+
+            <ol id="queue-list" aria-label="Audio task queue"></ol>
+        </section>
+
+        <section class="visualizer-section" aria-labelledby="visualizer-title">
+            <h2 id="visualizer-title">Real-Time Audio Visualizer</h2>
+
+            <canvas
+                id="audio-canvas"
+                width="800"
+                height="250"
+                role="img"
+                aria-label="Real-time audio frequency visualization"
+            >
+                Audio frequency visualization is not supported by your browser.
+            </canvas>
+
+            <p id="visualizer-status" aria-live="polite">
+                Visualizer is inactive.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Lab 02 - Homework 2</p>
+    </footer>
+</body>
+</html>

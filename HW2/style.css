@@ -1,0 +1,193 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background: #ffffff;
+    color: #123b78;
+    padding: 10px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+/* Header */
+.site-header {
+    background: #174a8b;
+    color: white;
+    text-align: center;
+    padding: 28px 16px;
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+.site-header p {
+    margin-bottom: 0;
+}
+
+/* Main layout */
+main {
+    width: min(1100px, 94%);
+    margin: 30px auto;
+    display: grid;
+    gap: 24px;
+}
+
+.player-section,
+.queue-section,
+.visualizer-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    margin-top: 0;
+    color: #174a8b;
+}
+
+/* Audio input */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#track-url {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #6b7280;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Player controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+button {
+    background: #174a8b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #103667;
+}
+
+button:disabled {
+    background: #6b7280;
+    cursor: not-allowed;
+}
+
+#stop-audio,
+#cancel-task {
+    background: #a52626;
+}
+
+#stop-audio:hover,
+#cancel-task:hover {
+    background: #7f1d1d;
+}
+
+#player-status {
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* FIFO queue */
+#queue-count {
+    font-weight: bold;
+}
+
+#queue-list {
+    padding-left: 24px;
+}
+
+#queue-list li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #eef4fc;
+    border-left: 4px solid #174a8b;
+    border-radius: 4px;
+    overflow-wrap: anywhere;
+}
+
+/* Visualizer */
+#audio-canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #101827;
+    border-radius: 8px;
+}
+
+#visualizer-status {
+    margin-top: 12px;
+    color: #374151;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background: #e5eaf2;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+        margin: 16px auto;
+    }
+
+    .player-section,
+    .queue-section,
+    .visualizer-section {
+        padding: 16px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls button {
+        width: 100%;
+    }
+
+    .site-header h1 {
+        font-size: 24px;
+    }
+}
