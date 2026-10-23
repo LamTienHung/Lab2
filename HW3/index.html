@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for the upcoming Tech Innovation Summit.">
+    <title>Tech Innovation Summit 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <nav aria-label="Main navigation">
+            <a class="logo" href="#">TechSummit 2026</a>
+            <a href="#registration">Register Now</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" aria-labelledby="event-title">
+            <p class="eyebrow">Upcoming Technology Event</p>
+            <h1 id="event-title">Tech Innovation Summit 2026</h1>
+            <p>
+                Join developers, designers, and innovators
+                for an exciting technology event.
+            </p>
+
+            <h2>Event Starts In</h2>
+
+            <div class="countdown" role="timer" aria-label="Event countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <span>Days</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <span>Hours</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <span>Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <span>Seconds</span>
+                </div>
+            </div>
+
+            <p id="countdown-status" aria-live="polite"></p>
+        </section>
+
+        <section id="registration" class="registration"
+                 aria-labelledby="registration-title">
+            <h2 id="registration-title">Event Registration</h2>
+            <p>Complete the form below to reserve your spot.</p>
+
+            <form id="registration-form">
+                <label for="full-name">Full Name</label>
+                <input
+                    type="text"
+                    id="full-name"
+                    name="fullName"
+                    autocomplete="name"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    maxlength="254"
+                    required
+                >
+
+                <button type="submit" id="submit-button">
+                    Register Now
+                </button>
+
+                <p id="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Tech Innovation Summit.</p>
+    </footer>
+</body>
+</html>
