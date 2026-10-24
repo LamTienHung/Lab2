@@ -104,9 +104,16 @@ function setFormState(newState, message = "") {
 }
 
 // Simulate an asynchronous registration request
-function simulateRegistration() {
-    return new Promise((resolve) => {
+
+function simulateRegistration(email) {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
+            // Test error state with this email
+            if (email.toLowerCase() === "error@test.com") {
+                reject(new Error("Registration failed. Please try again."));
+                return;
+            }
+
             resolve({
                 success: true,
                 message: "Registration completed successfully!"
@@ -115,11 +122,13 @@ function simulateRegistration() {
     });
 }
 
+
 // Handle form submission
+
 registrationForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // Prevent submission while another request is running
+    // Prevent concurrent submissions
     if (formState === FORM_STATES.SUBMITTING) {
         return;
     }
@@ -127,25 +136,36 @@ registrationForm.addEventListener("submit", async (event) => {
     const fullName = fullNameInput.value.trim();
     const email = emailInput.value.trim();
 
-    if (!fullName || !email) {
-        setFormState(FORM_STATES.ERROR, "Please complete all fields.");
+    // Validate input
+    if (
+        fullName.length < 2 ||
+        fullName.length > 100 ||
+        email.length > 254 ||
+        !emailInput.validity.valid
+    ) {
+        setFormState(
+            FORM_STATES.ERROR,
+            "Please enter a valid name and email address."
+        );
         return;
     }
 
     setFormState(FORM_STATES.SUBMITTING);
 
     try {
-        const result = await simulateRegistration();
+        const result = await simulateRegistration(email);
 
         if (!result.success) {
             throw new Error("Registration failed.");
         }
 
+        // Use textContent to avoid interpreting HTML
         setFormState(FORM_STATES.SUCCESS, result.message);
     } catch (error) {
         setFormState(FORM_STATES.ERROR, error.message);
     }
 });
+
 
 // Initial state
 setFormState(FORM_STATES.IDLE);
